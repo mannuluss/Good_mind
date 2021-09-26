@@ -18,5 +18,10 @@ public class Conversacion implements Serializable {
     public Conversacion() {
 
     }
-
+    public Conversacion(String touser) {
+        ChatUser = touser;
+    }
+    public void AddMsj(String msj,TypeMenssage typemsj,String id_remitente){
+        chat.add(new Mensaje(msj, typemsj, id_remitente));
+    }
 }

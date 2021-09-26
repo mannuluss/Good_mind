@@ -2,7 +2,7 @@
     {
         "id":"a62d8ad0-9483-4df2-8ef4-52404bf946b6",
         "nombre": "felipe",
-        "role": "profesional",
+        "role": "usuario",
         "state": false,
         "conversaciones": [
             {
@@ -14,7 +14,7 @@
                     },
                     {
                         "tipo": "text",
-                        "mensaje": "Buen dia felipe soy tu psicologo compañero, parcero , novia xd",
+                        "mensaje": "Buen dia daniel soy tu psicologo compañero, parcero , novia xd",
                         "id_remitente": "55ef7250-bf3a-4c46-9d16-ea94f174b212"
                     }
                 ],
@@ -33,9 +33,9 @@
         "id":"9716d903-e965-4445-aff1-0579c51e826b",
         "nombre": "valentina",
         "role": "usuario",
-        "state": false,
+        "state": true,
         "conversaciones": [],
-        "notificacion": false,
+        "notificacion": true,
         "registro": {
             "positivos": 0,
             "negativos": 100,
@@ -45,7 +45,7 @@
     {
         "id":"b8a20c3c-8cb1-4309-bf63-8445b74ede24",
         "nombre": "carlos",
-        "role": "usuario",
+        "role": "profesional",
         "state": true,
         "conversaciones": [],
         "notificacion": false,
@@ -59,7 +59,7 @@
         "id":"55ef7250-bf3a-4c46-9d16-ea94f174b212",
         "nombre": "daniel",
         "role": "profesional",
-        "state": false,
+        "state": true,
         "conversaciones": [],
         "notificacion": false,
         "registro": {

@@ -10,4 +10,6 @@ comment3.target=java.util.ArrayList\ GetListNameChat(boolean)
 comment3.text=\r\n\ obtiene\ una\ lista\ con\ los\ nombres\ de\ las\ usuarios\ con\ los\ que\ ha\ iniciados\r\n\ conversaciones\ previas.\r\n\ \r\n\ @return\r\n
 comment4.params=name_user
 comment4.target=Conversacion\ GetConversacion(java.lang.String)
-numComments=5
+comment5.params=allusers
+comment5.target=Usuario\ RamdomProfesional(java.util.ArrayList)
+numComments=6

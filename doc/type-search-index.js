@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"<Unnamed>","l":"Conversacion"},{"p":"<Unnamed>","l":"Goodmind"},{"p":"<Unnamed>","l":"jsonutility"},{"p":"<Unnamed>","l":"Mensaje"},{"p":"<Unnamed>","l":"Registro"},{"p":"<Unnamed>","l":"Role"},{"p":"<Unnamed>","l":"TypeMenssage"},{"p":"<Unnamed>","l":"Usuario"}]

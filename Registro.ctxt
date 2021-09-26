@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Registro
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Registro\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Registro()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Registro\r\n
+comment2.params=emocion
+comment2.target=boolean\ registrar(emociones)
+comment3.params=
+comment3.target=float\ GetTotal()
+comment4.params=
+comment4.target=float\ PorcentPlus()
+comment5.params=
+comment5.target=float\ Porcentless()
+comment6.params=
+comment6.target=float\ PorcentNeutral()
+numComments=7

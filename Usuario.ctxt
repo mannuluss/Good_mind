@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Usuario
+comment0.text=\r\n\ la\ informacion\ de\ un\ usuario\ en\ la\ plataforma\r\n\ \r\n\ @version\ (1.0)\r\n
+comment1.params=name\ rol\ estado
+comment1.target=Usuario(java.lang.String,\ Role,\ boolean)
+comment2.params=name\ rol
+comment2.target=Usuario(java.lang.String,\ Role)
+comment3.params=activos
+comment3.target=java.util.ArrayList\ GetListNameChat(boolean)
+comment3.text=\r\n\ obtiene\ una\ lista\ con\ los\ nombres\ de\ las\ usuarios\ con\ los\ que\ ha\ iniciados\r\n\ conversaciones\ previas.\r\n\ \r\n\ @return\r\n
+comment4.params=name_user
+comment4.target=Conversacion\ GetConversacion(java.lang.String)
+numComments=5

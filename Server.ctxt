@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Server
+comment0.text=\r\n\ clase\ con\ metodos\ utilizados\ para\ leer\ o\ escribir\ archivos\ json\ en\ este\ caso\r\n\ obtener\ la\ informacion\ de\ la\ aplicacion\ (usuarios\ registrados)\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=path
+comment1.target=java.util.ArrayList\ GetAllUsers(java.lang.String)
+comment1.text=\r\n\ obtiene\ la\ lista\ de\ usuarios\ registrados\ en\ la\ plataforma\r\n\ \r\n\ (lee\ un\ archivo\ .json)\r\n\ \r\n\ @param\ path\ ubicacion\ del\ archivo\r\n\ @return\ lista\ de\ usuarios\r\n
+comment2.params=ubicacion
+comment2.target=java.util.ArrayList\ GetConsultorios(java.lang.String)
+comment3.params=user
+comment3.target=void\ userToJson(Usuario)
+comment3.text=\r\n\ guarda\ objeto\ de\ tipo\ Usuario\ en\ el\ archivo\ .json\ de\ usuarios\r\n\ \r\n\ (para\ guardar\ nuevos\ usuarios)\r\n\ \r\n\ @param\ user\ el\ usuario\r\n
+numComments=4

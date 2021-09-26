@@ -1,6 +1,6 @@
 [
     {
-        "id":"a62d8ad0-9483-4df2-8ef4-52404bf946b6",
+        "id": "a62d8ad0-9483-4df2-8ef4-52404bf946b6",
         "nombre": "felipe",
         "role": "usuario",
         "state": false,
@@ -30,7 +30,7 @@
         }
     },
     {
-        "id":"9716d903-e965-4445-aff1-0579c51e826b",
+        "id": "9716d903-e965-4445-aff1-0579c51e826b",
         "nombre": "valentina",
         "role": "usuario",
         "state": true,
@@ -43,7 +43,7 @@
         }
     },
     {
-        "id":"b8a20c3c-8cb1-4309-bf63-8445b74ede24",
+        "id": "b8a20c3c-8cb1-4309-bf63-8445b74ede24",
         "nombre": "carlos",
         "role": "profesional",
         "state": true,
@@ -56,11 +56,28 @@
         }
     },
     {
-        "id":"55ef7250-bf3a-4c46-9d16-ea94f174b212",
+        "id": "55ef7250-bf3a-4c46-9d16-ea94f174b212",
         "nombre": "daniel",
         "role": "profesional",
         "state": true,
-        "conversaciones": [],
+        "conversaciones": [
+            {
+                "chat": [
+                    {
+                        "tipo": "text",
+                        "mensaje": "hola amigo mio",
+                        "id_remitente": "a62d8ad0-9483-4df2-8ef4-52404bf946b6"
+                    },
+                    {
+                        "tipo": "text",
+                        "mensaje": "Buen dia daniel soy tu psicologo compañero, parcero , novia xd",
+                        "id_remitente": "55ef7250-bf3a-4c46-9d16-ea94f174b212"
+                    }
+                ],
+                "activo": true,
+                "ChatUser": "felipe"
+            }
+        ],
         "notificacion": false,
         "registro": {
             "positivos": 0,

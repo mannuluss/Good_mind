@@ -33,7 +33,7 @@ public class Registro {
         return positivos + negativos + neutros;
     };
 
-    public float PorcentPlus() {
+    /*public float PorcentPlus() {
         float total = GetTotal();
         if (total != 0)
             return positivos / total;
@@ -55,6 +55,6 @@ public class Registro {
             return neutros / total;
         else
             return 0;
-    }
+    }*/
 
 }

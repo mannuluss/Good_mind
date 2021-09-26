@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.io.IOException;
-import javax.swing.JOptionPane;
-import javax.swing.JMenu;
 
 /**
  * Write a description of class main here.
@@ -147,14 +144,15 @@ public class Goodmind {
 
     private static void Estadisticas() {
         Scanner sc = new Scanner(System.in);
-        System.out.flush();
+        var total = user.registro.GetTotal();
+        System.out.println("============= Estadisticas ====================");
         System.out.println("Total emociones registradas: " + user.registro.GetTotal());
         System.out.print("positivas: ");
-        PrintBar(user.registro.PorcentPlus());
+        PrintBar(user.registro.positivos, total);
         System.out.print("negativos: ");
-        PrintBar(user.registro.Porcentless());
+        PrintBar(user.registro.negativos, total);
         System.out.print("neutros: ");
-        PrintBar(user.registro.PorcentNeutral());
+        PrintBar(user.registro.neutros, total);
         var exit = false;
         System.out.println("");
         System.out.println("> 1. regresar");
@@ -194,18 +192,22 @@ public class Goodmind {
      * 
      * @param value de 0 a 1
      */
-    private static void PrintBar(float value) {
+    private static void PrintBar(float value, float total) {
         System.out.print("[");
+        float percent = 0;
+        if (total != 0)
+            percent = value / total;
         var temp = 1;
         for (int index = 0; index < 10; index++) {
-            if (temp < value * 10) {
+            if (temp < percent* 10) {
                 System.out.print("◘");
                 temp++;
             } else {
                 System.out.print(" ");
             }
         }
-        System.out.println("]  " + value * 100 + "%");
+        
+        System.out.println("]  " + value + "/" + total + " => " + percent*100 + "%");
 
     }
 
@@ -219,7 +221,6 @@ public class Goodmind {
     private static void Conversar() {
         Scanner sc = new Scanner(System.in);
         if (user.role == Role.usuario) {
-            // imprime una lista de los profesionales disponibles
             Usuario pro = Usuario.RamdomProfesional(Allusers);
             if (pro == null)
                 System.out.println("NO hay usuarios disponibles intente mas tarde");
@@ -257,40 +258,11 @@ public class Goodmind {
         }
     }
 
-    // public static Conversacion GetConversationByUser(String nameuser, Role rol,
-    // String toChat) {
-    // for (Usuario usuario : Allusers) {
-    // if (usuario.nombre.equals(nameuser) && rol == usuario.role) {
-    // for (Conversacion c : usuario.conversaciones) {
-    // if (c.ChatUser.equals(nameuser))
-    // return c;
-    // }
-    // }
-    // }
-    // return null;
-    // }
-    public static Usuario GetUser(String nameuser, Role rol) {
-        for (Usuario usuario : Allusers) {
-            if (usuario.nombre.equals(nameuser) && rol == usuario.role) {
-                return usuario;
-            }
-        }
-        return null;
-    }
-
     public static void SeccionChat(Conversacion Chatfrom, Conversacion ChatDestino) {
         System.out.println("============== Chat (" + Chatfrom.ChatUser + ") ==================");
         var exit = false;
         Scanner sc = new Scanner(System.in);
-        // Conversacion Chat = user.GetConversacion(Chat.nombre);
-        for (Mensaje msj : Chatfrom.chat) {
-            String start = msj.tipo == TypeMenssage.voice ? "►♪ " : (msj.tipo == TypeMenssage.emocion ? "☻" : "");
-            if (msj.id_remitente == user.id) {
-                System.out.format("%10.3f%n", start + msj.mensaje);
-            } else {
-                System.out.println(start + msj.mensaje);
-            }
-        }
+        PrintConversacion(Chatfrom);
         do {
             // Aqui se imprimiria la respuesta de la otra persona
             System.out.println("> 1.texto");
@@ -299,7 +271,8 @@ public class Goodmind {
                 System.out.println("> 3.emocion");
             System.out.println("> 4.back");
             System.out.print("Respuesta: ");
-            switch (sc.next()) {
+            var option = sc.next();
+            switch (option) {
                 case "1":
                     System.out.print("Ingrese Texto: ");
                     var msj = sc.next();
@@ -332,11 +305,21 @@ public class Goodmind {
                 case "4":
                     exit = true;
                     return;
-                default:
-                    System.out.println("Opcion no valida");
-                    break;
             }
         } while (!exit);
+    }
+
+    public static void PrintConversacion(Conversacion Chatfrom) {
+        if (Chatfrom.chat.size() == 0)
+            System.out.println("");
+        for (Mensaje msj : Chatfrom.chat) {
+            String start = msj.tipo == TypeMenssage.voice ? "►♪ " : (msj.tipo == TypeMenssage.emocion ? "☻" : "");
+            if (msj.id_remitente == user.id) {
+                System.out.println("TU: " + start + msj.mensaje);
+            } else {
+                System.out.println(Chatfrom.ChatUser + ": " + start + msj.mensaje);
+            }
+        }
     }
 
     /**
@@ -403,5 +386,14 @@ public class Goodmind {
         Usuario newUser = new Usuario(username, rol);
         Allusers.add(newUser);
         return newUser;
+    }
+
+    public static Usuario GetUser(String nameuser, Role rol) {
+        for (Usuario usuario : Allusers) {
+            if (usuario.nombre.equals(nameuser) && rol == usuario.role) {
+                return usuario;
+            }
+        }
+        return null;
     }
 }

@@ -1,9 +1,8 @@
-
 /**
- * Write a description of class Mensaje here.
+ * Esta clase representa cada mensaje en conversación
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Valentina Escobar, Daniel Gonzalez y Felipe Rojas 
+ *
  */
 public class Mensaje
 {

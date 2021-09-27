@@ -1,9 +1,8 @@
-
 /**
- * Enumeration class TypeMenssage - write a description of the enum class here
+ * TypeMenssage representa tipo de mensaje (sea texto , voz o emocion)
  * 
- * @author (your name here)
- * @version (version number or date here)
+ * @author Valentina Escobar, Daniel Gonzalez y Felipe Rojas 
+ *
  */
 public enum TypeMenssage
 {

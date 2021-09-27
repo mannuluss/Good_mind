@@ -46,7 +46,7 @@
         "id": "b8a20c3c-8cb1-4309-bf63-8445b74ede24",
         "nombre": "carlos",
         "role": "profesional",
-        "state": true,
+        "state": false,
         "conversaciones": [],
         "notificacion": false,
         "registro": {

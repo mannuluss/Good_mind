@@ -1,4 +1,8 @@
 #BlueJ class context
 comment0.target=consultorio
-comment0.text=\r\n\ Write\ a\ description\ of\ interface\ consultoiro\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-numComments=1
+comment0.text=\r\n\ Esta\ clase\ representa\ los\ consultorios\ de\ los\ profesionales\ de\ la\ salud;\r\n\ sus\ variables\ indican\ el\ nombre\ de\ este,\ su\ ubicaci\u00F3n\ y\ una\ peque\u00F1a\r\n\ descripci\u00F3n.\r\n\r\n\ @author\ Valentina\ Escobar,\ Daniel\ Gonzalez\ y\ Felipe\ Rojas\ \r\n\ \r\n
+comment1.params=
+comment1.target=consultorio()
+comment2.params=nombre\ ubicacion\ description
+comment2.target=consultorio(java.lang.String,\ java.lang.String,\ java.lang.String)
+numComments=3

@@ -1,4 +1,4 @@
 #BlueJ class context
 comment0.target=TypeMenssage
-comment0.text=\r\n\ Enumeration\ class\ TypeMenssage\ -\ write\ a\ description\ of\ the\ enum\ class\ here\r\n\ \r\n\ @author\ (your\ name\ here)\r\n\ @version\ (version\ number\ or\ date\ here)\r\n
+comment0.text=\r\n\ TypeMenssage\ representa\ tipo\ de\ mensaje\ (sea\ texto\ ,\ voz\ o\ emocion)\r\n\ \r\n\ @author\ Valentina\ Escobar,\ Daniel\ Gonzalez\ y\ Felipe\ Rojas\ \r\n\r\n
 numComments=1

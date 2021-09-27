@@ -3,5 +3,15 @@
         "nombre": "Consultorio ramirez",
         "ubicacion": "080001",
         "descripcion": "atencion psicologica profesional,\nabierto de lunes a viernes\n8am - 12m\n2pm-6pm\nmayor informacion tel:6432157"
+    },
+    {
+        "nombre": "Consultorio odoñez",
+        "ubicacion": "080001",
+        "descripcion": "atencion psicologica profesional,\nabierto de lunes a viernes\n8am - 12m\n2pm-6pm\nmayor informacion tel:6432157"
+    },
+    {
+        "nombre": "Consultas otiz",
+        "ubicacion": "080002",
+        "descripcion": "atencion psicologica profesional,\nabierto de lunes a viernes\n8am - 12m\n2pm-6pm\nmayor informacion tel:6432157"
     }
 ]

@@ -2,33 +2,39 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Write a description of class main here.
+ * Esta clase principal representa el funcionamiento y modelado de Goodmind
+ * donde se encuentran todos los métodos para la interfaz de consola
+ *
+ * @author Valentina Escobar, Daniel Gonzalez y Felipe Rojas 
  * 
- * @author (your name)
- * @version (a version number or a date)
  */
 public class Goodmind {
 
-    private static Usuario user;
+    public static Scanner sc = new Scanner(System.in);
+    public static Usuario user;
     /**
      * arreglo que contiene a todos los usuarios registrados en la plataforma
      */
-    private static ArrayList<Usuario> Allusers = new ArrayList<Usuario>();
+    public static ArrayList<Usuario> Allusers = new ArrayList<Usuario>();
 
     /**
      * Constructor for objects of class main
      */
     private Goodmind() {
-
     }
 
     public static void Init() {
         Allusers.addAll(Server.GetAllUsers("./users.json"));
     }
 
+    /**
+     * Esta método representa la incialización de la interfaz en consola
+     * haciendo diferenciación entre los 2 roles (usuario/profesional)
+     *
+     */
     public static void main(String[] args) {
         Init();
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
         System.out.println("========= GOOD-MIND ===========");
         while (true) {
             if (user != null) {
@@ -52,14 +58,19 @@ public class Goodmind {
                     SectionCreateUser();
                 }
                 if (opt.equals("3")) {
+                    sc.close();
                     return;
                 }
             }
         }
     }
 
+    /**
+     * Esta método representa la creación del usuario
+     *
+     */
     private static void SectionCreateUser() {
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
         boolean wait = true;
         do {
             System.out.println("Creando Usuario");
@@ -74,7 +85,7 @@ public class Goodmind {
                 wait = false;
                 user = CreateAcount(name, password, RoleUser);
                 System.out.println("Usuario Creado Exitosamente");
-                sc.close();
+                //sc.close();
                 return;
             } else {
                 System.out.println("Usuario ya registrado...");
@@ -84,18 +95,22 @@ public class Goodmind {
             System.out.print("Respuesta: ");
             if (sc.next().equals("1")) {
                 wait = false;
-                sc.close();
+                //sc.close();
                 return;
             }
         } while (wait);
-        sc.close();
+        //sc.close();
     }
 
+    /**
+     * Esta método representa la sección del profesional
+     *
+     */
     private static void SeccionProfesional() {
         boolean exit = false;
         do {
             System.out.println("========= " + user.nombre + " =============");
-            Scanner sc = new Scanner(System.in);
+            //Scanner sc = new Scanner(System.in);
             System.out.println("> 1. Conversar");
             System.out.println("> 3. Cerrar sesion");
             System.out.print("Ingrese un numero de opcion : ");
@@ -105,24 +120,21 @@ public class Goodmind {
             if (opt.compareTo("3") == 0) {
                 exit = true;
                 user = null;
-                sc.close();
+                //sc.close();
                 return;
             }
-            sc.close();
+            //sc.close();
         } while (!exit);
     }
 
     /**
-     * seccion del usuario
+     * seccion principal del usuario (Home)
      */
     private static void SeccionUser() {
-        // System.out.print("\033[H\033[2J");
-        // System.out.flush();
-        // new ProcessBuilder("cmd", "/c", "cls");
         boolean exit = false;
         do {
             System.out.println("========= " + user.nombre + " =============");
-            Scanner sc = new Scanner(System.in);
+            //Scanner sc = new Scanner(System.in);
             System.out.println("> 1. Conversar");
             System.out.println("> 2. Estadisticas");
             System.out.println("> 3. Cerrar sesion");
@@ -135,15 +147,19 @@ public class Goodmind {
             if (opt.compareTo("3") == 0) {
                 exit = true;
                 user = null;
-                sc.close();
+                //sc.close();
                 return;
             }
-            sc.close();
+            //sc.close();
         } while (!exit);
     }
 
+    /**
+     * Esta método representa las estadísticas de las emociones del usuario
+     *
+     */
     private static void Estadisticas() {
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
         var total = user.registro.GetTotal();
         System.out.println("============= Estadisticas ====================");
         System.out.println("Total emociones registradas: " + user.registro.GetTotal());
@@ -157,7 +173,7 @@ public class Goodmind {
         System.out.println("");
         System.out.println("> 1. regresar");
         if (user.notificacion)
-            System.out.println("> 2. Ha sido notificado como usuario en condiccion de riesgo, para mayor infomacion");
+            System.out.println("> 2. Ha sido notificado como usuario en condición de riesgo, para mayor infomación");
         System.out.print("Respuesta: ");
         do {
             String res = sc.next();
@@ -168,9 +184,14 @@ public class Goodmind {
                 Notify();
             }
         } while (!exit);
-        sc.close();
+        //sc.close();
     }
 
+    /**
+     * Esta método representa la información sobre consultorios de profesionales 
+     * de la salud cerca a la ubicación del usuario.
+     *
+     */
     private static void Notify() {
         System.out.println("============== Consultorios =================");
         // revisa por ip y solicitar activar GPS del dispositivo para buscar
@@ -189,8 +210,11 @@ public class Goodmind {
     }
 
     /**
-     * 
-     * @param value de 0 a 1
+     * Este método representa la parte porcental de las estadísticas de las
+     * emociones del usuario.
+     *
+     * @param value cantidad
+     * @param total total de valores
      */
     private static void PrintBar(float value, float total) {
         System.out.print("[");
@@ -212,6 +236,8 @@ public class Goodmind {
     }
 
     /**
+     * Este método representa la conversación entre usuario y profesional o viceversa
+     *
      * Cuando un usuario o profesional desea conversar con alguien
      * 
      * en caso de ser el profesional obtiene una lista de usuarios con los que ha
@@ -219,7 +245,7 @@ public class Goodmind {
      * con el cual hablar.
      */
     private static void Conversar() {
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
         if (user.role == Role.usuario) {
             Usuario pro = Usuario.RamdomProfesional(Allusers);
             if (pro == null)
@@ -258,10 +284,16 @@ public class Goodmind {
         }
     }
 
+    /**
+     * Esta método representa las partes o secciones de la conversación
+     *
+     * @param Chatfrom chat remitente
+     * @param ChatDestino chat destino
+     */
     public static void SeccionChat(Conversacion Chatfrom, Conversacion ChatDestino) {
         System.out.println("============== Chat (" + Chatfrom.ChatUser + ") ==================");
         var exit = false;
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
         PrintConversacion(Chatfrom);
         do {
             // Aqui se imprimiria la respuesta de la otra persona
@@ -309,6 +341,10 @@ public class Goodmind {
         } while (!exit);
     }
 
+    /**
+     * Esta método muestra en consola la conversación
+     *
+     */
     public static void PrintConversacion(Conversacion Chatfrom) {
         if (Chatfrom.chat.size() == 0)
             System.out.println("");
@@ -327,7 +363,7 @@ public class Goodmind {
      */
     private static void Login() {
         System.out.println("============ Inicio de sesion ============");
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
 
         boolean exit = false;
         do {
@@ -350,20 +386,20 @@ public class Goodmind {
             System.out.print("Respuesta: ");
             if (sc.next().equals("1")) {
                 exit = true;
-                sc.close();
+                //sc.close();
                 return;
             }
         } while (!exit);
         System.out.println("Login Exitoso");
-        sc.close();
+        //sc.close();
     }
 
     /**
-     * metodo que compara la
+     * metodo que verfica si el usuario esta registrado y las credenciales son correctas
      * 
-     * @param nameuser
-     * @param password
-     * @param rol
+     * @param nameuser nombre del usuario
+     * @param password contraseña del usuario
+     * @param rol rol (usuario/profesional)
      * @return null o el usuario en caso de encontrarlo
      */
     public static Usuario VerifyCredencials(String nameuser, String password, Role rol) {
@@ -377,6 +413,14 @@ public class Goodmind {
         return null;
     }
 
+    /**
+     * método que crea cuenta
+     * 
+     * @param username nombre de usuario
+     * @param password contraseña del usuario
+     * @param rol rol (usuario/profesional)
+     * @return null o el usuario en caso de encontrarlo
+     */
     public static Usuario CreateAcount(String username, String password, Role rol) {
         for (Usuario usuario : Allusers) {
             if (usuario.nombre.equals(username) && usuario.role == rol)
@@ -388,6 +432,13 @@ public class Goodmind {
         return newUser;
     }
 
+    /**
+     * metodo que busca un usuario
+     * 
+     * @param nameuser nombre del usuario
+     * @param rol rol (usuario/profesional)
+     * @return el usuario o nulo si no lo encuentra
+     */
     public static Usuario GetUser(String nameuser, Role rol) {
         for (Usuario usuario : Allusers) {
             if (usuario.nombre.equals(nameuser) && rol == usuario.role) {

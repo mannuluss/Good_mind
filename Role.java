@@ -1,9 +1,9 @@
 
 /**
- * Enumeration class role - write a description of the enum class here
+ * Role representa rol del usuario
  * 
- * @author (your name here)
- * @version (version number or date here)
+ * @author Valentina Escobar, Daniel Gonzalez y Felipe Rojas 
+ * 
  */
 public enum Role
 {

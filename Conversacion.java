@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.io.Serializable;
 
 /**
- * Write a description of class Conversacion here.
+ * Clase que representa la conversación
  * 
- * @author (your name)
- * @version (a version number or a date)
+ * @author Valentina Escobar, Daniel Gonzalez y Felipe Rojas 
+ * 
  */
 public class Conversacion implements Serializable {
     public ArrayList<Mensaje> chat = new ArrayList<>();

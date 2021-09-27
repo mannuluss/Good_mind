@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=emociones
+comment0.text=\r\n\ emociones\ representa\ las\ 6\ emociones\ que\ el\ usuario\ puede\ presentar\r\n\r\n\ @author\ Valentina\ Escobar,\ Daniel\ Gonzalez\ y\ Felipe\ Rojas\ \r\n\ \r\n
 comment1.params=tipo
 comment1.target=emociones(int)
 comment2.params=

@@ -1,8 +1,8 @@
 /**
- * Write a description of class Registro here.
+ * Esta clase registra el tipo de emoción del usuario.
  * 
- * @author (your name)
- * @version (a version number or a date)
+ * @author Valentina Escobar, Daniel Gonzalez y Felipe Rojas 
+ * 
  */
 public class Registro {
     public float positivos = 0;
@@ -32,29 +32,4 @@ public class Registro {
     public float GetTotal() {
         return positivos + negativos + neutros;
     };
-
-    /*public float PorcentPlus() {
-        float total = GetTotal();
-        if (total != 0)
-            return positivos / total;
-        else
-            return 0;
-    }
-
-    public float Porcentless() {
-        float total = GetTotal();
-        if (total != 0)
-            return negativos / total;
-        else
-            return 0;
-    }
-
-    public float PorcentNeutral() {
-        float total = GetTotal();
-        if (total != 0)
-            return neutros / total;
-        else
-            return 0;
-    }*/
-
 }

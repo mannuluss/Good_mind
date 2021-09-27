@@ -3,8 +3,9 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * la informacion de un usuario en la plataforma
+ *La informacion de un usuario en la plataforma
  * 
+ * @author Valentina Escobar, Daniel Gonzalez y Felipe Rojas 
  * @version (1.0)
  */
 public class Usuario {
@@ -15,10 +16,9 @@ public class Usuario {
      * disponibles (true), ocupado (false)
      */
     public boolean state;
-    // public String direccion;
     public List<Conversacion> conversaciones;
     /**
-     * notificacion de usuario requiere ayuda especializada
+     * notificacion de que el usuario requiere ayuda especializada
      */
     public boolean notificacion;
     public Registro registro;
@@ -36,6 +36,12 @@ public class Usuario {
         this(name, rol, true);
     }
 
+    /**
+     * Devuelve conversación si existe, de lo contrario crea una
+     *
+     * @param username nombre de usuario
+     * @return conversación
+     */
     public Conversacion InitChat(String username){
         for (Conversacion cv : conversaciones) {
             if (cv.ChatUser.equals(username))
@@ -46,7 +52,12 @@ public class Usuario {
         return newcv;
     }
 
-
+    /**
+     * Devuelve la conversacione con un usuario
+     *
+     * @param name_user nombre del usuario
+     * @return conversacións
+     */
     public Conversacion GetConversacion(String name_user){
         for (Conversacion ch : conversaciones) {
             if (ch.ChatUser.equals(name_user)){
@@ -56,6 +67,10 @@ public class Usuario {
         return null;
     }
 
+    /**
+     * buscar aletoriamente un usuario de tipo profesional
+     * @return profesional, nulo en caso de no haber ninguno disponible
+     */
     public static Usuario RamdomProfesional(ArrayList<Usuario> allusers){
         ArrayList<Usuario> profesionales = new ArrayList<Usuario>();
         for (Usuario u : allusers) {

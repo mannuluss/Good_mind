@@ -3,13 +3,14 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+import java.io.*;
 
 /**
- * clase con metodos utilizados para leer o escribir archivos json en este caso
+ * Clase con metodos utilizados para leer o escribir archivos json en este caso
  * obtener la informacion de la aplicacion (usuarios registrados)
  * 
- * @author (your name)
- * @version (a version number or a date)
+ * @author Valentina Escobar, Daniel Gonzalez y Felipe Rojas 
+ * 
  */
 public class Server {
     /**
@@ -66,6 +67,12 @@ public class Server {
         return Users;
     }
 
+    /**
+     * Analiza la información de la ubicación del usuario para
+     * mostrar los consultorios cercanos
+     *
+     * @return ubicación de consultorios cercanos
+     */
     public static ArrayList<consultorio> GetConsultorios(String ubicacion) {
         // se analiza la ip o el gps para proponer los consultorios cerca
         InputStream is = Server.class.getResourceAsStream("./list_consultorios.json");
@@ -95,10 +102,16 @@ public class Server {
      * 
      * @param user el usuario
      */
-    public static void userToJson(Usuario user) {
-        /*
-         * ObjectMapper mapper= new ObjectMapper(); new
-         * JSONObject(mapper.writeValueAsString(user));
-         */
+    public static void userToJson(Usuario user,String path) {
+        try{     
+            //Creating stream and writing the object    
+            FileOutputStream fout=new FileOutputStream("f.txt");    
+            ObjectOutputStream out=new ObjectOutputStream(fout);    
+            out.writeObject(user);    
+            out.flush();    
+            //closing the stream    
+            out.close();    
+            System.out.println("success");    
+        }catch(Exception e){System.out.println(e);}    
     }
 }

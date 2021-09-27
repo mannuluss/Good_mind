@@ -1,14 +1,17 @@
 #BlueJ class context
 comment0.target=Usuario
-comment0.text=\r\n\ la\ informacion\ de\ un\ usuario\ en\ la\ plataforma\r\n\ \r\n\ @version\ (1.0)\r\n
+comment0.text=\r\nLa\ informacion\ de\ un\ usuario\ en\ la\ plataforma\r\n\ \r\n\ @author\ Valentina\ Escobar,\ Daniel\ Gonzalez\ y\ Felipe\ Rojas\ \r\n\ @version\ (1.0)\r\n
 comment1.params=name\ rol\ estado
 comment1.target=Usuario(java.lang.String,\ Role,\ boolean)
 comment2.params=name\ rol
 comment2.target=Usuario(java.lang.String,\ Role)
 comment3.params=username
 comment3.target=Conversacion\ InitChat(java.lang.String)
+comment3.text=\r\n\ Devuelve\ conversaci\u00F3n\ si\ existe,\ de\ lo\ contrario\ crea\ una\r\n\r\n\ @param\ username\ nombre\ de\ usuario\r\n\ @return\ conversaci\u00F3n\r\n
 comment4.params=name_user
 comment4.target=Conversacion\ GetConversacion(java.lang.String)
+comment4.text=\r\n\ Devuelve\ la\ conversacione\ con\ un\ usuario\r\n\r\n\ @param\ name_user\ nombre\ del\ usuario\r\n\ @return\ conversaci\u00F3ns\r\n
 comment5.params=allusers
 comment5.target=Usuario\ RamdomProfesional(java.util.ArrayList)
+comment5.text=\r\n\ buscar\ aletoriamente\ un\ usuario\ de\ tipo\ profesional\r\n\ @return\ profesional,\ nulo\ en\ caso\ de\ no\ haber\ ninguno\ disponible\r\n
 numComments=6
